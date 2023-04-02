@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react";
-import MovieCard from "./MovieCard";
-import "./App.css";
-import SearchIcon from "./search.svg";
+import { useEffect, useState } from "react"
+import MovieCard from "./MovieCard"
+import "./App.css"
+import SearchIcon from "./search.svg"
 
-const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=1a40b53";
+const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=1a40b53"
 
 const App = () => {
-  const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [movies, setMovies] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
   const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
-    const data = await response.json();
+    const response = await fetch(`${API_URL}&s=${title}`)
+    const data = await response.json()
 
-    console.log(data.Search);
-    setMovies(data.Search);
+    console.log(data.Search)
+    setMovies(data.Search)
   };
 
   useEffect(() => {
-    searchMovies("SpiderMan");
-  }, []);
+    searchMovies("SpiderMan")
+  }, [])
 
   return (
     <div className="app">
@@ -50,7 +50,7 @@ const App = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
