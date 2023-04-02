@@ -21,6 +21,7 @@ const App = () => {
     searchMovies("SpiderMan")
   }, [])
 
+
   return (
     <div className="app">
       <h1>MovieLand</h1>
